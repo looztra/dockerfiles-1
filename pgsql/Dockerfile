@@ -6,7 +6,7 @@ RUN yum install -y postgresql93-server postgresql93-contrib
 USER postgres
 RUN /usr/pgsql-9.3/bin/initdb -D /var/lib/pgsql/data
 
-ADD ph_hba.conf /var/lib/pgsql/data/
+ADD pg_hba.conf /var/lib/pgsql/data/
 ADD postgresql.conf /var/lib/pgsql/data/ 
 
 EXPOSE 5432
