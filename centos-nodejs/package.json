@@ -1,5 +1,5 @@
 {
-  "name": "docker-centos-hello",
+  "name": "centos-nodejs-hello",
   "private": true,
   "version": "0.0.1",
   "description": "Node.js Hello World app on CentOS using docker",
