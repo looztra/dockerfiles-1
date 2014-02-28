@@ -15,7 +15,6 @@ app.get('/', function (req, res) {
 
 app.get('/bdd', function (req, res) {
 	var client = new pg.Client(conString);
-	var reponseDate = "";
 	client.connect(function(err) {
 		if(err) {
 			return console.error('could not connect to postgres', err);
@@ -24,12 +23,12 @@ app.get('/bdd', function (req, res) {
 			if(err) {
 				return console.error('error running query', err);
 			}
-			reponseDate = result.rows[0].theTime;
+			var reponseDate = result.rows[0].theTime;
 			console.log(reponseDate);
+			res.send('Hello ! It\'s ' + reponseDate + ' thru node js listening on port ' + PORT + ' \n');
 			client.end();
 		});
 	});
-	res.send('Hello ! It\'s ' + reponseDate + ' thru node js listening on port ' + PORT + ' \n');
 });
 
 app.listen(PORT)
