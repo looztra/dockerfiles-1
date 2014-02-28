@@ -5,6 +5,7 @@ RUN     rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-
 RUN     yum install -y npm curl
 
 ADD package.json /src/
+RUN npm config set strict-ssl false
 RUN cd /src; npm install
 ADD index.js /src/
 
