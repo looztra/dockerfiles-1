@@ -14,19 +14,34 @@ app.get('/', function (req, res) {
 });
 
 app.get('/bdd', function (req, res) {
-	var client = new pg.Client(conString);
+	/*var client = new pg.Client(conString);
 	client.connect();
 	var versionQuery = client.query("SELECT version()");
 	var reponse = ""
 	versionQuery.on('row', function(row) {
 		console.log(row);
-		reponse += row;
+		reponse += row.version;
 	});
 
 	versionQuery.on('end', function() { 
 		client.end();
-	});
-	res.send('Hello from ' + reponse + ' thru node js listening on port ' + PORT + ' \n');
+	});*/
+var client = new pg.Client(conString);
+client.connect(function(err) {
+	if(err) {
+		return console.error('could not connect to postgres', err);
+	}
+	client.query('SELECT NOW() AS "theTime"', function(err, result) {
+		if(err) {
+			return console.error('error running query', err);
+		}
+		var reponseDate = result.rows[0].theTime;
+		console.log(reponseDate);
+    //output: Tue Jan 15 2013 19:12:47 GMT-600 (CST)
+    client.end();
+});
+});
+res.send('Hello ! It\'s ' + reponseDate + ' thru node js listening on port ' + PORT + ' \n');
 });
 
 app.listen(PORT)
