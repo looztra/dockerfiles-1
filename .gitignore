@@ -16,3 +16,9 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# Vagrant stuff
+.vagrant
+.vagrant.d
+*iso
+*box
