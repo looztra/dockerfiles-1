@@ -4,7 +4,11 @@ Busybox-base
 What will I find here ?
 -----------------------
 
-THis the busybox-base. From [Progrium's original image](https://github.com/progrium/busybox), we'll install some packages and pre-creates some folder layout.
+This the busybox-base. 
+From [Progrium's original image](https://github.com/progrium/busybox) :
+* We'll install some packages
+* Pre-creates some folder layout
+* And copying the bash-profile script to fine-tune our command line
 
 It can be used as a quick image to launch interactive bash into.
 
