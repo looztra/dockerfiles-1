@@ -24,5 +24,5 @@ Detailled images list and their own documentation
 -------------------------------------------------
 
 Given each image has its own behaviours, just grab their specifi documentation :
-* [busybox-base](busybox-base/README.md)
-* [busybox-nginx](busybox-nginx/README.md) 
+* [busybox-base](busybox-base/)
+* [busybox-nginx](busybox-nginx/) 
