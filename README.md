@@ -14,6 +14,6 @@ Which one to pick
 -----------------
 
 We got some different OS-based for thoses images. Each OS has it's own sub-list of images, check for each :
-* [Busbox based](busybox-imgs/)
+* [Busybox based](busybox-imgs/)
 * [Debian based](debian-imgs/)
 * [Centos based](centos-imgs/)
