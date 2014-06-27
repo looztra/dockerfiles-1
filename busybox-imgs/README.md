@@ -10,10 +10,10 @@ Thanks to [Progrium's works on its packaging root image](https://github.com/prog
 Quickstart
 ----------
 
-Fetch the repository where you got a Docker running and just build & run. You shall build the busybox-base base before :
+Fetch the repository where you got a Docker running and just build & run. You shall build the busybox-base base before all :
 
 ```
-cd <repo>/busybox
+cd <repo>/busybox-imgs
 docker build -t busybox-base:latest busybox-base
 docker build -t <NAME OF IMAGE> <image folder name>
 docker run <OPTS> <NAME OF IMAGE>
@@ -23,6 +23,6 @@ docker run <OPTS> <NAME OF IMAGE>
 Detailled images list and their own documentation
 -------------------------------------------------
 
-Given each image has its own behaviours, just grab their specifi documentation :
+Given each image has its own behaviours, just grab their specific documentation :
 * [busybox-base](busybox-base/)
 * [busybox-nginx](busybox-nginx/) 
