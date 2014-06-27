@@ -17,7 +17,7 @@ Quickstart
 Fetch the repository where you got a Docker running and just build & run, beggining with [busybox-base](../busybox-base) :
 
 ```
-cd <repo>/busybox
+cd <repo>/busybox-imgs
 docker build -t busybox-base:latest busybox-base/
 docker build -t busybox-nginx:latest busybox-nginx/
 CID=$(docker run -d busybox-nginx)

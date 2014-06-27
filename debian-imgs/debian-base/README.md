@@ -1,14 +1,13 @@
-Busybox-base
+Debian-base
 ============
 
 What will I find here ?
 -----------------------
 
-This the busybox-base. 
-From [Progrium's original image](https://github.com/progrium/busybox) :
+This the debian-base img. 
+From debian:jessie
 * We'll install some packages
 * Pre-creates some folder layout
-* And copying the bash-profile script to fine-tune our command line
 
 It can be used as a quick image to launch interactive bash into.
 
@@ -18,8 +17,8 @@ Quickstart
 Fetch the repository where you got a Docker running and just build & run :
 
 ```
-cd <repo>/busybox-imgs
-docker build -t busybox-base:latest busybox-base
-docker run -ti busybox-base
+cd <repo>/debian-imgs
+docker build -t debian-base:latest debian-base
+docker run -ti debian-base
 bash $ # You're done !
 ```
