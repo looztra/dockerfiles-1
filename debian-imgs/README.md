@@ -23,5 +23,5 @@ docker run <OPTS> <NAME OF IMAGE>
 Detailled images list and their own documentation
 -------------------------------------------------
 
-Given each image has its own behaviours, just grab their specifi documentation :
+Given each image has its own behaviours, just grab their specific documentations :
 * [debian-base](debian-base/)
