@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y nano wget dialog net-tools procps inetu
 RUN mkdir -p /DATA /app
 VOLUME "/DATA"
 
-#COPY bash-profile /.bashrc
+COPY bash-profile /.bashrc
 
 CMD ["/bin/bash"]
 
