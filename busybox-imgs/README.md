@@ -23,6 +23,6 @@ docker run <OPTS> <NAME OF IMAGE>
 Detailled images list and their own documentation
 -------------------------------------------------
 
-Given each image has its own behaviours, just grab their specific documentation :
+Given each image has its own behaviours, just grab their specific documentations :
 * [busybox-base](busybox-base/)
 * [busybox-nginx](busybox-nginx/) 
