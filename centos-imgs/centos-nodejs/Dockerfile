@@ -1,4 +1,5 @@
 FROM centos-base:latest
+MAINTAINER damien.duportal@gmail.com
 
 RUN yum install -y npm nodejs
 RUN npm config set strict-ssl false
