@@ -1,13 +1,11 @@
-# Dockerfile from tutorial http://docs.docker.io/en/latest/examples/nodejs_web_app/
-FROM    centos
+FROM centos-base:latest
 
-RUN     rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-RUN     yum install -y npm curl
-
-ADD package.json /src/
+RUN yum install -y npm nodejs
 RUN npm config set strict-ssl false
-RUN cd /src; npm install
-ADD index.js /src/
+
+ADD docs /app/docs
+WORKDIR /app/docs
+RUN if [ -f package.json ]; then npm install; else echo "No package.json found : no npm install to run"; fi
 
 EXPOSE  8080
-CMD ["node", "/src/index.js"]
+CMD ["/usr/bin/node", "/app/docs/index.js"]

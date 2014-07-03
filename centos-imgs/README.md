@@ -25,3 +25,4 @@ Detailled images list and their own documentation
 
 Given each image has its own behaviours, just grab their specific documentations :
 * [centos-base](centos-base/)
+* [centos-nodejs](centos-nodejs/)
