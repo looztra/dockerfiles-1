@@ -1,6 +1,0 @@
-[reverbrain]
-name=Reverbrain Repo for EL $releasever - Current
-baseurl=http://repo.reverbrain.com/rhel/current/$releasever/$basearch/
-enabled=1
-gpgcheck=1
-gpgkey=http://repo.reverbrain.com/REVERBRAIN.GPG
