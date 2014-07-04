@@ -24,6 +24,6 @@ Detailled images list and their own documentation
 -------------------------------------------------
 
 Given each image has its own behaviours, just grab their specific documentations :
-* [centos-base](centos-base/)
-* [centos-nodejs](centos-nodejs/)
-* [centos-nodejs](centos-chefdev/)
+* [centos-base, a base images with my basic tools](centos-base/)
+* [centos-nodejs, a nodejs app server on CentOS](centos-nodejs/)
+* [centos-chefdev, a chef-dev tools stack](centos-chefdev/)
