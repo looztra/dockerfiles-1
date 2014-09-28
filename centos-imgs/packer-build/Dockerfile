@@ -27,14 +27,15 @@ RUN curl -s -L -o /tmp/gagc.tgz https://google-api-go-client.googlecode.com/arch
 	&& rsync -r ./google-api-go-client-2f3a11c87522/compute/v1beta16 ${GOPATH}/src/code.google.com/p/google-api-go-client/compute/ \
 	&& rm -rf /tmp/gagc.tgz ./google-api-go-client-2f3a11c87522
 
-RUN mkdir -p ${GOPATH}/src/code.google.com/p
-WORKDIR /go/src/code.google.com/p
-RUN hg clone https://code.google.com/p/gosshold
-#RUN curl -L -o /tmp/gosshold_packer.patch "https://gist.githubusercontent.com/rickard-von-essen/10444950/raw/d4f6cf54e37e3ee1486b9a351f3e3908fe8564d3/gosshold_packer.patch"
-#RUN curl -L -o /tmp/gosshold_packer-parallels.patch "https://gist.githubusercontent.com/rickard-von-essen/10444950/raw/c94106303d99119f535be94e70969de08ef45543/gosshold_packer-parallels.patch"
-#RUN git apply < gosshold_packer.patch
+RUN hg clone https://code.google.com/p/gosshold ${GOPATH}/src/code.google.com/p/gosshold \
+	&& curl -L -o /tmp/gosshold_packer.patch "https://gist.githubusercontent.com/rickard-von-essen/10444950/raw/d4f6cf54e37e3ee1486b9a351f3e3908fe8564d3/gosshold_packer.patch" \
+	&& curl -L -o /tmp/gosshold_packer-parallels.patch "https://gist.githubusercontent.com/rickard-von-essen/10444950/raw/c94106303d99119f535be94e70969de08ef45543/gosshold_packer-parallels.patch"
 
+RUN git apply < /tmp/gosshold_packer.patch \
+	&&  sed -i 's/go.crypto/gosshold/g' builder/cloudstack/ssh.go
 
-#RUN make
+RUN make
 
-CMD ["/bin/bash"]
+RUN ./pkg/linux_amd64/packer -v
+
+CMD ["cat","/go/src/github.com/mitchellh/packer/pkg/linux_amd64/packer"]
