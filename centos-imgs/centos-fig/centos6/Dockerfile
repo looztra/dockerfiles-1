@@ -1,13 +1,9 @@
 FROM centos:centos6
 MAINTAINER damien.duportal@gmail.com
 
-# This is a tmp build from https://github.com/docker/fig/pull/405
-RUN curl --insecure -L https://dl.dropboxusercontent.com/u/2524496/fig-bin-0.5.2-dev > /usr/local/bin/fig \
-	&& chmod +x /usr/local/bin/fig
+ENV FIG_VERSION 1.0.0
 
-# TO use for the next fig version
-#ENV FIG_VERSION XXX
-#RUN curl --insecure -L https://github.com/orchardup/fig/releases/download/${FIG_VERSION}/linux > /usr/local/bin/fig \
+RUN curl --insecure -L https://github.com/docker/fig/releases/download/${FIG_VERSION}/fig-`uname -s`-`uname -m` > /usr/local/bin/fig \
 	&& chmod +x /usr/local/bin/fig
 
 VOLUME ["/app"]
