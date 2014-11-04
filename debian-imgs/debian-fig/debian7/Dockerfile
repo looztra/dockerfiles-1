@@ -9,7 +9,7 @@ RUN echo 'LC_ALL=C.UTF-8' >> /etc/environment \
 	&& apt-get update && apt-get install -y -q --no-install-recommends curl \
 	&& apt-get autoremove -y -q \
 	&& apt-get clean -y -q \
-	&& curl --insecure -L https://dl.dropboxusercontent.com/u/2524496/fig-bin-0.5.2-dev > /usr/local/bin/fig \
+	&& curl --insecure -L https://github.com/docker/fig/releases/download/1.0.0/fig-`uname -s`-`uname -m` > /usr/local/bin/fig \
 	&& chmod +x /usr/local/bin/fig
 
 VOLUME ["/app"]
