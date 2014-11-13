@@ -3,7 +3,7 @@ MAINTAINER damien.duportal@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL C.UTF-8
-ENV FIG_VERSION 1.0.0
+ENV FIG_VERSION 1.0.1
 
 
 RUN echo 'LC_ALL=C.UTF-8' >> /etc/environment \
