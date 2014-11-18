@@ -22,6 +22,4 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf \
 COPY entrypoint.sh /usr/local/bin/
 COPY nginx.tmpl /etc/nginx/
 
-RUN
-
 CMD ["/bin/bash","/usr/local/bin/entrypoint.sh"]
