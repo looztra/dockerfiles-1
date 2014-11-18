@@ -14,6 +14,6 @@ RUN tar xzf /usr/local/bin/docker-gen-linux-amd64-${DOCKER_GEN_VERSION}.tar.gz -
 	&& chmod a+x /usr/local/bin/docker-gen
 
 COPY entrypoint.sh /usr/local/bin/
-COPY nginx.tmpl /etc/
+COPY nginx.tmpl /etc/nginx/
 
 CMD ["/bin/bash","/usr/local/bin/entrypoint.sh"]
