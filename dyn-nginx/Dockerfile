@@ -13,7 +13,15 @@ RUN tar xzf /usr/local/bin/docker-gen-linux-amd64-${DOCKER_GEN_VERSION}.tar.gz -
 	&& rm -f /usr/local/bin/docker-gen-linux-amd64-${DOCKER_GEN_VERSION}.tar.gz \
 	&& chmod a+x /usr/local/bin/docker-gen
 
+RUN sed -i "/error_log/d" /etc/nginx/nginx.conf \
+	&& sed -i "/daemon/d" /etc/nginx/nginx.conf \
+
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf \
+	&& echo "error_log  /dev/stdout warn;" >> /etc/nginx/nginx.conf
+
 COPY entrypoint.sh /usr/local/bin/
 COPY nginx.tmpl /etc/nginx/
+
+RUN
 
 CMD ["/bin/bash","/usr/local/bin/entrypoint.sh"]
