@@ -13,6 +13,9 @@ RUN sed -i "/error_log/d" /etc/nginx/nginx.conf
 
 RUN echo "error_log  /dev/stdout warn;" >> /etc/nginx/nginx.conf
 
+RUN rm -f /etc/nginx/conf.d/*
+
+
 COPY entrypoint.sh /usr/local/bin/
 COPY nginx.tmpl /etc/nginx/
 
