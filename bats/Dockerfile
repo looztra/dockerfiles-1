@@ -1,13 +1,12 @@
-FROM progrium/busybox
+FROM gliderlabs/alpine:3.1
 MAINTAINER Damien DUPORTAL <damien.duportal@gmail.com>
 
 ENV BATS_VERSION 0.4.0
 
 ADD https://github.com/sstephenson/bats/archive/v${BATS_VERSION}.tar.gz /tmp/
 
-RUN opkg-install bash \
-	&& gunzip -f /tmp/v${BATS_VERSION}.tar.gz \
-	&& tar -x -f /tmp/v${BATS_VERSION}.tar -C /tmp/ \
+RUN apk --update add bash \
+	&& tar -x -z -f /tmp/v${BATS_VERSION}.tar.gz -C /tmp/ \
 	&& bash /tmp/bats-${BATS_VERSION}/install.sh /usr/local \
 	&& rm -rf /tmp/*
 
